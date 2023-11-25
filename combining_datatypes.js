@@ -57,10 +57,33 @@ crayonSelector = () => {
 console.log(crayonSelector().color[1])
 
 // Create a function powerButton that returns a function called options - options should console.log a simple message like select a song. Call that inner function
-powerButton = () =>{
-    return {options: () =>{
-        console.log("select a song")
-    }}
+powerButton = () => {
+    return {
+        options: () => {
+            console.log("select a song")
+        }
+    }
 }
 
 powerButton().options()
+
+/*********************************************** */
+//MODEL A VENDING MACHINE
+/************************************************ */
+
+const vendingMachine = {
+    snacks: [
+        { name: "chips", price: 5 },
+        { name: "cookies", price: 5 },
+        { name: "candy", price: 5 }
+    ],
+    vend: (num) => {
+        if (num >= 0 && num < 3) {
+            return (vendingMachine.snacks[num].name)
+        } else {
+            console.log("sorry, not available")
+        }
+    }
+}
+
+console.log(vendingMachine.vend(0))
